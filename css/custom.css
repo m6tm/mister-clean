@@ -3925,7 +3925,7 @@ body.fixed {
   }
 }
 .page-header .logo img {
-  max-width: 100%;
+  width: 120px;
 }
 @media (min-width: 1200px) {
   .page-header .logo img {
@@ -3942,8 +3942,8 @@ body.fixed {
 }
 @media (max-width: 767px) {
   .page-header .logo img {
-    max-width: 145px;
-    min-width: 145px;
+    max-width: 100px;
+    min-width: 80px;
   }
 }
 .page-header-slogan {
