@@ -46,7 +46,8 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	display: block;
+	display: flex;
+	align-items: center;
 }
 
 .slick-track:before,
