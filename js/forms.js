@@ -7,8 +7,8 @@
 				forms = {
 					contactForm: $('#contactForm'),
 					orderForm: $('#orderForm'),
-					questionForm: $('#questionForm'),
-					calculateForm: $('#calculateForm')
+					questionForm: $('#questionForms'),
+					calculateForm: $('#calculateForms')
 				};
 
 			$document.ready(function () {
