@@ -3,7 +3,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "M6tm\\MisterClean\\": "src/"
+            "M6tm\\Mister Clean\\": "src/"
         }
     },
     "authors": [
