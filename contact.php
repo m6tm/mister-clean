@@ -1,23 +1,25 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-$mail = new PHPMailer(true);
-
-$nom = $_POST['name'] ?? null;
-$email = $_POST['email'] ?? null;
-$message = $_POST['message'] ?? null;
-
-if (in_array(null, [$nom, $email, $message])) {
-        header('Location: index.html?status=error');
-        exit(0);
-}
 
 try {
-        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail = new PHPMailer(true);
+        
+        $nom = $_POST['name'] ?? null;
+        $email = $_POST['email'] ?? null;
+        $message = $_POST['message'] ?? null;
+        
+        if (in_array(null, [$nom, $email, $message])) {
+                header('Location: index.html?status=error');
+                exit(0);
+        }
+
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
