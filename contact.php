@@ -33,10 +33,10 @@ try {
 
         $mail->isHTML(true);
         $mail->Subject = 'Nouveau contact';
-        $mail->Body = <<< MESSAGE
+        $mail->Body = "
                 Je m'appel $nom,<br/>
                 $message
-        MESSAGE;
+        ";
 
         $mail->send();
         header('Location: index.html?status=success');
