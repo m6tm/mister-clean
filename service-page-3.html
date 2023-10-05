@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <title>Mister Clean - Services Page</title>
+    <title>Mister Clean - Nettoyage Industriel</title>
     <!-- Vendors -->
     <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
     <link href="css/vendor/animate.min.css" rel="stylesheet">
@@ -17,6 +17,8 @@
     <!-- Template Style -->
     <link href="css/custom.css" rel="stylesheet">
     <link href="color/color.css" rel="stylesheet">
+    <link href="css/dist/gallery.min.css" rel="stylesheet">
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet">
     <!-- Icon Font-->
     <link href="fonts/icomoon/style.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -203,6 +205,32 @@ Galerie</a></li> -->
                             tasser dans les conduits empêchant ainsi le passage du racleur.
                         </p>
 
+                        <main class="main" style="margin-top: 5rem;">
+                            <div class="container" id="gallery">
+                            </div>
+                        </main>
+
+                        <script>
+                            let gallery = document.querySelector('#gallery')
+
+                            if (gallery) {
+                                for (let len = 1; len < 49; len++) {
+                                    let dom = new DOMParser().parseFromString(
+                                        `
+                                        <div class="card">
+                                            <div class="card-image">
+                                                <a href="images/gallery/nettoyage_Industriel (${len}).jpeg" data-fancybox="gallery">
+                                                    <img src="images/gallery/nettoyage_Industriel (${len}).jpeg" alt="Image Gallery">
+                                                </a>
+                                            </div>
+                                        </div>`,
+                                        'text/html'
+                                    ).querySelector('.card')
+                                    gallery.append(dom)
+                                }
+                            }
+                        </script>
+
                         <div class="divider-xl"></div>
                         <div class="contact-box">
                             <div class="contact-info-wrap">
@@ -295,7 +323,9 @@ Galerie</a></li> -->
     </footer>
     <!-- /Footer -->
     <!-- External JavaScripts -->
-    <script src="js/vendor/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/slick.min.js"></script>
     <script src="js/vendor/isotope.pkgd.min.js"></script>

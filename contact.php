@@ -9,6 +9,7 @@ require 'vendor/autoload.php';
 
 try {
         $mail = new PHPMailer(true);
+        $_emal = "maboadaniel.55@gmail.com";
         
         $nom = $_POST['name'] ?? null;
         $email = $_POST['email'] ?? null;
@@ -23,19 +24,27 @@ try {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'maboadaniel.55@gmail.com';
+        $mail->Username = $_emal;
         $mail->Password = 'yuzvakpzmejmlpsa';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->setFrom('maboadaniel.55@gmail.com', 'Equipe Mister Clean');
-        $mail->addAddress($email, $nom);
+        $mail->setFrom($_emal, 'Equipe Mister Clean');
+        $mail->addAddress($_emal, 'Mister Clean');
 
         $mail->isHTML(true);
         $mail->Subject = 'Nouveau contact';
         $mail->Body = "
-                Je m'appel $nom,<br/>
+                Je m'appel <strong>$nom</strong>,<br/>
                 $message
+                
+                <p>
+                        Informations:
+                                <ul>
+                                        <li><strong>Nom :</strong> $nom</li>
+                                        <li><strong>Email :</strong> $email</li>
+                                </ul>
+                </p>
         ";
 
         $mail->send();
